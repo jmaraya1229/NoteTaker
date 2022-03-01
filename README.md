@@ -24,7 +24,7 @@ In order to view a previously created note, the user can click on the `title tex
 To delete a note, the user can click the `red trash can symbol` that is next to the note they want to delete. 
 
 ### Walkthrough of usage
-![screenshot]()
+![screenshot](/noteTakergif.gif)
 
 ## Heroku
 The application is also accessible to use online on Heroku by using this [link](https://note-taker-jessemaraya.herokuapp.com/).
