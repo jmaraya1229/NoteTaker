@@ -47,16 +47,14 @@ notes.delete("/:note_id", (req, res) => {
     readFromFile('./db/db.json')
       .then((data) => JSON.parse(data))
       .then((json) => {
-        // Make a new array of all tips except the one with the ID provided in the URL
-        let result = json.filter((note) => note.note_id !== noteID); 
+        let result = json.filter((note) => note.note_id !== noteID);
+        console.log(result) 
+        console.log(result.length) 
 
-        // Save that array to the filesystem
         writeToFile('./db/db.json', result);
   
-        // Respond to the DELETE request
-        res.json(`Item ${noteID} has been deleted 🗑️`);
-      });
-      readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
-  });
+        res.json(`${noteID} has been deleted 🗑️`);
+    });
+});
 
 module.exports = notes;
