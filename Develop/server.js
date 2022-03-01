@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const noteStorage = require("../Develop/routes/notes");
 const api = require("./routes/index.js");
 const { clog } = require("./middleware/clog");
 const app = express();
@@ -23,21 +22,6 @@ app.get("/notes", (req,res) =>
 // GET * to return "index.html" homepage
 app.get("*", (req,res) => 
     res.sendFile(path.join(__dirname, "/public/index.html"))
-);
-
-// GET /api/notes
-app.get("/api/notes", (req,res) => 
-    noteStorage
-
-);
-
-// POST /api/notes
-app.post("/api/notes", (req, res) =>
-    console.info(`${req.method} stored note`)
-);
-
-app.delete("/notes", (req, res) =>
-    res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
 
 app.listen(PORT, () =>
